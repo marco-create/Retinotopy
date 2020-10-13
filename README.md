@@ -1,6 +1,10 @@
 # Retinotopy
 ### Few background here
 
+### 0. Freesurfer reconstruction of anatomical surface
+Use [Freesurfer](https://surfer.nmr.mgh.harvard.edu/fswiki/FreeSurferWiki) to reconstruct the anatomical surface from T1 image ([check this tutorial](https://andysbrainbook.readthedocs.io/en/latest/FreeSurfer/FS_ShortCourse/FS_03_ReconAll.html)).
+
+## Setting up folder tree
 Create a *Projects* directory in your system and inside that a *Retinotopy* directory.   
 Initial tree inside the retinotopy directory:
 ```bash
@@ -24,8 +28,11 @@ movefile myInplane ../Inplane
 % now return into the main subject folder
 cd ../
 ```
-### 1. Setting the anatomy and classification file from Freesurfer
 
+### 1a. Anatomical image and meshes from Freesufer
+To DO
+
+### 1b. Preprocessing using SPM
 To Do
 
 ### 2. Session creation
@@ -62,9 +69,9 @@ File >>> Quit
 in this way, you keep everything clean.
 
 ### 4. Check alignment and install gray segmentation
-Now you can run the script ```b_checkAlign_installGray.m```. Remeber to stay in the subject directory, where the mrSESSION has been created.   
-Check the new mounted gray ROI on the inplane. If it looks reasonably well, save and close inplane as we did above. Otherwise, repeate the alignment.   
-<img src=https://user-images.githubusercontent.com/53913990/95838745-7234d600-0d42-11eb-951c-26e13f4402ad.png width="400">
+Now you can run the script ```b_checkAlign_installGray.m```. Remember to stay in the subject directory, where the mrSESSION has been created.   
+Check the new mounted gray ROI on the inplane. If it looks reasonably well, save and close inplane as we did above. Otherwise, repeat the alignment.   
+<img src=https://user-images.githubusercontent.com/53913990/95838745-7234d600-0d42-11eb-951c-26e13f4402ad.png width="400">   
 
 ### 5. Average time series from GUI
 Open again an Inpane view
@@ -77,7 +84,7 @@ Analysis >>> Time Series >>> Averages tSeries
 ```
 a new window has been opened:   
 <img src=https://user-images.githubusercontent.com/53913990/95839312-29c9e800-0d43-11eb-811d-30a287b9e3b0.png width="400">
-
+   
 Start with the eccentricity runs. 
   - Inside the *Annotation for average scan?* write *Average of Eccentricity*;   
   - Select *(1) eccen out* and *(2) eccen out* scans and press *OK*. Wait until the process is completed;
@@ -89,10 +96,10 @@ Save and close.
 
 ### 6. Tranform the time series using trilinear interpolation
 In the MATLAB command window, run ```c_interpol.m```. A new UI window is opened.   
-<img src=https://user-images.githubusercontent.com/53913990/95840514-8679d280-0d44-11eb-9f11-c391ab7da8cb.png width="400">
-Be sure to select the *Averages* in *dataType:*!   
+<img src=https://user-images.githubusercontent.com/53913990/95840514-8679d280-0d44-11eb-9f11-c391ab7da8cb.png width="400">   
+Be sure to select the *Averages* in *dataType:* !   
 
-Now you are ready to computer the correlation analyses for eccentricity and polar maps.
+Now you are ready to compute the correlation analyses for eccentricity and polar maps.
 Go to
 ```
 Analysis >>> Travelling Waves Analyses >>> Compute corAnal >>> compute corAnal (all scans)
