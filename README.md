@@ -109,3 +109,12 @@ the process is quite fast. You can load the maps going to
 File >>> corAnal >>> load corAnal
 ```
 to see the map on the three axes, click to ```View >>> Phase map```.
+
+# Utils and links
+All files are *adapted* from mrVista tutorial.
+⬇️⬇️⬇️⬇️
+- [Tutorial](https://github.com/vistalab/vistasoft/wiki/Ernie-Tutorials);
+- [Inplane creation](https://github.com/vistalab/vistasoft/issues/179);
+- [Init and Inplane view](https://github.com/vistalab/vistasoft/blob/master/tutorials/bold/session/t_initVistaSession.m);
+- [Install segmentation](https://github.com/vistalab/vistasoft/blob/master/tutorials/bold/session/t_installSegmentation.m);
+- [Trilinear interpolation](https://github.com/vistalab/vistasoft/blob/master/tutorials/bold/statistical/t_pRF.m)
