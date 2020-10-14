@@ -9,7 +9,7 @@ fssubjectsdir = getenv('SUBJECTS_DIR');
 %% Create and save meshes
 hemi = 'b';
 surfaces = {'white' 'pial' 'sphere' 'inflated'};
-[meshes, fnames] = meshImportFreesurferSurfaces('your_subject_folder', hemi, surfaces);
+[meshes, fnames] = meshImportFreesurferSurfaces('your_FSsubject_folder', hemi, surfaces);
 
 %% Visualize 
 for m = 1:4
