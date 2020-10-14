@@ -17,7 +17,7 @@ The `reconall` step lasts about 8-9 hours!
 
 ## Setting up folder tree :file_folder:
 Create a *Projects* directory in your system and inside that a directory named *Retinotopy*.   
-Initial tree inside the retinotopy directory:
+Create the following tree inside the retinotopy directory:
 ```bash
 C:.
 └───Retinotopy
@@ -56,15 +56,15 @@ The steps I've being used are:
 Use only one batch, defining two sessions; one session for expanding ring and one for rotating wedge.
 
 ### 2. Session creation
-Now you can run the init command to generate the *mrSESSION* inside the subject folder.  
+Now you can run the init function  `a_init_Align.m` to generate the *mrSESSION* inside the subject folder.  
 Just remember to change:   
 ```
 % Subject name
-params.subject      = 'test_01';
+params.subject      = 'your_subject_name';
 % Name for each of the loaded scan (2 rings and 2 wedges in this case)
 params.annotations = {'eccen out','eccen out','polar CCW','polar CCW'};
 ```
-and run the `a_init_Align.m`.   
+and run it.   
 Now an Inplane window should be opened.   
 <img src=https://user-images.githubusercontent.com/53913990/95835842-043adf80-0d3f-11eb-928e-e911b314e40f.png width="400">
 
@@ -128,7 +128,25 @@ the process is quite fast. You can load the maps going to
 ```
 File >>> corAnal >>> load corAnal
 ```
-to see the map on the three axes, click to ```View >>> Phase map```.
+to see the map on the three axes, click to ```View >>> Phase map```.   
+Use the slider menus on the right side of the GUI to adjust the threshold.   
+<img src="https://user-images.githubusercontent.com/53913990/95956847-2eec6d00-0dff-11eb-8801-a28fd9f555fe.png" width="400">   
+
+
+### 7. Meshes visualisation
+From the current window (3 view), open meshes to visualise eccentricity or polar map on 3D surfaces.   
+```
+Gray >>> Surface Mesh >>> Load and Display
+```
+Choose which hemisphere you want to display. An additional window showing a 3D brain surface should be show up.   
+Back to 3 view GUI,   
+```
+Gray >>> Update Mesh
+```   
+Eccentricity map   
+<img src="https://user-images.githubusercontent.com/53913990/95957578-2a748400-0e00-11eb-983f-90b3a4f8e891.png" width="400"><img src="https://user-images.githubusercontent.com/53913990/95958699-cc48a080-0e01-11eb-9d42-a6e96689b719.png" width="200">   
+Polar map   
+<img src="https://user-images.githubusercontent.com/53913990/95957931-ac64ad00-0e00-11eb-8a30-691534534019.png" width="400"><img src="https://user-images.githubusercontent.com/53913990/95958092-efbf1b80-0e00-11eb-8b3d-9dbcb79354f2.png" width="100">
 
 # Utils and links
 All files are *adapted* from mrVista tutorial.
