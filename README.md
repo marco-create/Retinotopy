@@ -1,11 +1,22 @@
 # Retinotopy
-### Few background here
+[Retinotopy](http://fourier.eng.hmc.edu/e180/lectures/v1/node3.html) is a procedure to map the projections of visual neurons from the retina to the visual brain areas.:eyes: :brain:   
+The following pipeline has been created to provide a clear and step-by-step pipeline in analyzing the eccentricity and polar coordinates of neuron receptive fields.   
+The main software is [mrVista](https://github.com/vistalab/vistasoft) developed by [vistalab](https://github.com/vistalab) from Stanford University.   
+The functional preprocessing is made using Statistical Parametric Mapping ([SPM12](https://www.fil.ion.ucl.ac.uk/spm/)).   
+
+Stimuli definition:   
+- expanding ring :arrow_right: 6 cycles, each of **to check**   
+- rotating wedge (counterclockwise):arrow_right: 6 cycles, each of **to check**   
+We have two runs for each stimulus.   
 
 ### 0. Freesurfer reconstruction of anatomical surface
-Use [Freesurfer](https://surfer.nmr.mgh.harvard.edu/fswiki/FreeSurferWiki) to reconstruct the anatomical surface from T1 image ([check this tutorial](https://andysbrainbook.readthedocs.io/en/latest/FreeSurfer/FS_ShortCourse/FS_03_ReconAll.html)).
+Use [Freesurfer](https://surfer.nmr.mgh.harvard.edu/fswiki/FreeSurferWiki) to reconstruct the anatomical surface from T1 image ([check this tutorial](https://andysbrainbook.readthedocs.io/en/latest/FreeSurfer/FS_ShortCourse/FS_03_ReconAll.html)).   
+Follow the instructions on how to set up Freesurfer on your system.   
+   
+The `reconall` step lasts about 8-9 hours!
 
-## Setting up folder tree
-Create a *Projects* directory in your system and inside that a *Retinotopy* directory.   
+## Setting up folder tree :file_folder:
+Create a *Projects* directory in your system and inside that a directory named *Retinotopy*.   
 Initial tree inside the retinotopy directory:
 ```bash
 C:.
@@ -30,10 +41,19 @@ cd ../
 ```
 
 ### 1a. Anatomical image and meshes from Freesufer
-To DO
+To obtain the anatomical after Freesurfer autorecon, run `anatFrom_FS.m`.   
+Just remember to change the subject name, inside the script, to match the Freesurfer output subject.   
+   
+After that, run `meshFrom_FS.m` to obtain 3D meshes for both hemispheres.   
+Again, change the subject name accordingly.
 
 ### 1b. Preprocessing using SPM
-To Do
+Briefly, use SPM to preprocess functional imaging.   
+The steps I've being used are:   
+- [x] realign: est+reslice
+- [x] coregister: est
+- [x] normalise: est+write   
+Use only one batch, defining two sessions; one session for expanding ring and one for rotating wedge.
 
 ### 2. Session creation
 Now you can run the init command to generate the *mrSESSION* inside the subject folder.  
