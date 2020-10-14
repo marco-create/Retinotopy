@@ -42,7 +42,7 @@ cd ../
 
 ### 1a. Anatomical image and meshes from Freesufer
 To obtain the anatomical after Freesurfer autorecon, run `anatFrom_FS.m`.   
-Just remember to change the subject name, inside the script, to match the Freesurfer output subject.   
+Just remember to change the subject name, inside the script (lines 18 and 19), to match the Freesurfer output subject.   
    
 After that, run `meshFrom_FS.m` to obtain 3D meshes for both hemispheres.   
 Again, change the subject name accordingly.
