@@ -5,8 +5,8 @@ The main software is [mrVista](https://github.com/vistalab/vistasoft) developed 
 The functional preprocessing is made using Statistical Parametric Mapping ([SPM12](https://www.fil.ion.ucl.ac.uk/spm/)).   
 
 Stimuli definition:   
-- expanding ring :arrow_right: 6 cycles, each of **to check**   
-- rotating wedge (counterclockwise):arrow_right: 6 cycles, each of **to check**   
+- expanding ring :arrow_right: 6 cycles;   
+- rotating wedge (counterclockwise):arrow_right: 6 cycles.   
 We have two runs for each stimulus.   
 
 ### 0. Freesurfer reconstruction of anatomical surface
@@ -52,18 +52,19 @@ Briefly, use SPM to preprocess functional imaging.
 The steps I've being used are:   
 - [x] realign: est+reslice
 - [x] coregister: est
-- [x] normalise: est+write   
+- [x] normalise: est+write
+
 Use only one batch, defining two sessions; one session for expanding ring and one for rotating wedge.
 
 ### 2. Session creation
 Now you can run the init function  `a_init_Align.m` to generate the *mrSESSION* inside the subject folder.  
-Just remember to change:   
+Just remember to change EPI scans name from line 8. You can modify also line 24 and 26 with annotations:
 ```
 % Subject name
 params.subject      = 'your_subject_name';
 % Name for each of the loaded scan (2 rings and 2 wedges in this case)
 params.annotations = {'eccen out','eccen out','polar CCW','polar CCW'};
-```
+```   
 and run it.   
 Now an Inplane window should be opened.   
 <img src=https://user-images.githubusercontent.com/53913990/95835842-043adf80-0d3f-11eb-928e-e911b314e40f.png width="400">
@@ -148,8 +149,14 @@ Eccentricity map
 Polar map   
 <img src="https://user-images.githubusercontent.com/53913990/95957931-ac64ad00-0e00-11eb-8a30-691534534019.png" width="400"><img src="https://user-images.githubusercontent.com/53913990/95958092-efbf1b80-0e00-11eb-8b3d-9dbcb79354f2.png" width="100">
 
+**TO DO** :clock3:   
+- [x] General overview of retinotopy pipeline;   
+- [ ] population receptive field (pRF);   
+- [ ] mapping surface with polar map;   
+- [ ] SPM batch for preprocess automatization;   
+
 # Utils and links
-All files are *adapted* from mrVista tutorial.
+All files are *adapted* from mrVista tutorials.
 ⬇️⬇️⬇️⬇️
 - [Tutorial](https://github.com/vistalab/vistasoft/wiki/Ernie-Tutorials);
 - [Inplane creation](https://github.com/vistalab/vistasoft/issues/179);
