@@ -1,6 +1,6 @@
 # Retinotopy
 [Retinotopy](http://fourier.eng.hmc.edu/e180/lectures/v1/node3.html) is a procedure to map the projections of visual neurons from the retina to the visual brain areas.:eyes: :brain:   
-The following pipeline has been created to provide a clear and step-by-step pipeline in analyzing the eccentricity and polar coordinates of neuron receptive fields.   
+The following procedure has been created to provide a clear and step-by-step pipeline in modelling the features of population receptive fields (pRF) of neurons in visual areas of human brain.   
 The main software is [mrVista](https://github.com/vistalab/vistasoft) developed by [vistalab](https://github.com/vistalab) from Stanford University.   
 The functional preprocessing is made using Statistical Parametric Mapping ([SPM12](https://www.fil.ion.ucl.ac.uk/spm/)).   
 
@@ -27,11 +27,11 @@ C:.
         ├───Raw
         └───Stimuli
 ```
-Cd inside the subject folder. 
+Cd into the subject folder. 
 ```
 cd subject_01
 ```
-mrVista software requires an [*Inplane image*](https://web.stanford.edu/group/vista/cgi-bin/wiki/index.php/Inplane) to proceed. If you did not acquire that, like me, just run the `inplane_mrVista.m` script. Remember to paste in in the `niftiRead` one of your functional images:   
+mrVista software requires an [*Inplane image*](https://web.stanford.edu/group/vista/cgi-bin/wiki/index.php/Inplane) to proceed. If you did not acquire that, like me, just run the `inplane_mrVista.m` script. Remember to paste in in the `niftiRead` call, one of your functional images:   
 ```
 cd ./Raw
 inplane_mrVista.m
